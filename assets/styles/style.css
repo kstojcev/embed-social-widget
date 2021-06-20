@@ -1,19 +1,21 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .cards {
-  margin: 50px 15px;
+  margin: 50px 15px 0 15px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20%, max-content));
-  grid-gap: 15px;
+  grid-gap: 10px;
+  padding: 4% 4% 0 4%;
 }
 
 .card {
   padding: 15px;
-  border: 1px solid #e8e8e8;
+  border: 1px solid #e0e0e0;
   flex: 0 1 calc(20% - 1em);
 }
 
@@ -39,13 +41,12 @@
 }
 
 .cardHeader .headerTitle p:nth-of-type(1) {
-  font-weight: bold;
-  font-size: 14px;
+  font-weight: 700;
 }
 
 .cardHeader .headerTitle p:nth-of-type(2) {
   margin-top: 3px;
-  font-weight: 100;
+  font-weight: 400;
   font-size: 12px;
 }
 
@@ -69,6 +70,33 @@
   padding: 15px 0;
 }
 
+.cardFooter p {
+  margin-left: 5px;
+}
+
+/* Load More Button */
+.loadMoreBtnContainer {
+  padding: 4% 0 4% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadMoreBtnContainer button {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 20px;
+  width: 137px;
+  height: 53px;
+  background: #0081ff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Modal Design */
+
 /* Responsive Design */
 
 @media only screen and (max-width: 1025px) {
@@ -77,16 +105,28 @@
   }
 }
 
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 993px) {
   .cards {
     grid-template-columns: repeat(auto-fit, minmax(40%, max-content));
-    margin: 50px 30px;
+    margin: 50px 30px 0 30px;
     grid-gap: 10px;
+  }
+  .cardContent img {
+    height: 325px;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(100%, max-content));
   }
 }
 
 @media only screen and (max-width: 426px) {
   .cards {
-    grid-template-columns: repeat(auto-fit, minmax(100%, max-content));
+    margin: 50px 5px 0 5px;
+  }
+  .cardContent img {
+    height: 250px;
   }
 }
