@@ -7,14 +7,16 @@
 .cards {
   margin-top: 50px;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .card {
-  padding: 20px;
+  padding: 15px;
   border: 1px solid #e8e8e8;
-  width: 21%;
-  margin: 5px;
+  /* width: 21%; */
+  flex: 0 1 calc(23% - 1em);
+  margin: 10px;
 }
 
 .cardHeader {
@@ -62,10 +64,10 @@
   margin-bottom: 10px;
 }
 
-/* Card Footer */
-
 .cardFooter {
   display: flex;
   border-top: 1px solid #e8e8e8;
   padding: 15px 0;
 }
+
+/* Responsive Design */
