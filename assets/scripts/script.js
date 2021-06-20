@@ -8,11 +8,19 @@ fetch("assets/data.json")
     let cardsContainer = document.getElementById("cardsContainer");
 
     for (let i = 0; i < cardInfo.length; i++) {
-      str = `${cardInfo[i].date}`;
-      strSplit = str.split(" ");
-      strSlice = strSplit.slice();
-      //   console.log(strSlice[0]);
-      neededString = strSlice[0];
+      let str = `${cardInfo[i].date}`;
+      let strSplit = str.split(" ");
+      let neededString = strSplit[0];
+
+      let date = new Date(neededString);
+
+      let formattedDate = date
+        .toLocaleDateString("en-GB", {
+          day: "numeric",
+          month: "short",
+          year: "numeric",
+        })
+        .replace(/ /g, " ");
 
       function sourceCheck() {
         if (cardInfo[i].source_type == "facebook") {
@@ -22,14 +30,13 @@ fetch("assets/data.json")
         }
       }
 
-      //   console.log(cardInfo[i].caption);
       let html = `<div class="card" id="modalBtn">
       <div class="cardHeader">
         <div class="headerTitle">
           <img src="${cardInfo[i].profile_image}" alt="" />
           <div>
             <p>${cardInfo[i].name}</p>
-            <p>${cardInfo[i].date}</p>
+            <p>${formattedDate}</p>
           </div>
         </div>
         <a href='${cardInfo[i].source_link}'>
