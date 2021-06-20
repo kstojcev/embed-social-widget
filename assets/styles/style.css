@@ -18,6 +18,10 @@
   border: 1px solid #e0e0e0;
 }
 
+.card:hover {
+  cursor: pointer;
+}
+
 .cardHeader {
   display: flex;
   justify-content: space-between;
@@ -33,6 +37,11 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
+}
+
+.cardHeader a img {
+  height: 24px;
+  width: 24px;
 }
 
 .cardHeader .headerTitle div {
