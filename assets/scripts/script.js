@@ -69,7 +69,8 @@ async function renderPosts() {
     `;
 
     let modal = `
-    <div class="modalContent" id="${current}">
+    <div class="modal" id="${current}">
+    <div class="modalContent">
         <img class="modalImage" src="${posts[current]["image"]}" alt="" />
       <div class="rightModal">
         <div class="cardHeader">
@@ -80,7 +81,7 @@ async function renderPosts() {
               <p>${formattedDate}</p>
             </div>
           </div>
-          <a href="">
+          <a href="${posts[current]["source_link"]}">
             <img src="${sourceCheck(posts[current])}" alt="" />
           </a>
         </div>
@@ -92,11 +93,26 @@ async function renderPosts() {
           <p>${posts[current]["likes"]}</p>
         </div>
       </div>
+      </div>
     </div>
     `;
 
-    cardsContainer.innerHTML += card;
-    modalsContainer.innerHTML += modal;
+    cardsContainer.insertAdjacentHTML("beforeend", card);
+    modalsContainer.insertAdjacentHTML("beforeend", modal);
+
+    let modalBtn = document.getElementById(`modal-btn-${current}`);
+    let modalCONTENT = document.getElementById(`${current}`);
+
+    modalBtn.addEventListener("click", function () {
+      modalCONTENT.style.display = "block";
+    });
+
+    window.addEventListener("click", function (e) {
+      if (e.target == modalCONTENT) {
+        modalCONTENT.style.display = "none";
+        console.log(modalCONTENT);
+      }
+    });
   }
 }
 
