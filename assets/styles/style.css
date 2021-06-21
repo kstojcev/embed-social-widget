@@ -105,6 +105,55 @@
 
 /* Modal Design */
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2%;
+}
+
+.modalContent {
+  display: flex;
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 10px;
+  width: 50%;
+}
+
+.modalImage {
+  width: 506px;
+  height: 506px;
+}
+
+.modalContent .rightModal {
+  width: 100%;
+  padding: 10px;
+}
+
+.modalContent .rightModal .cardHeader {
+  border-bottom: 1px solid #888;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.modalContent .rightModal .modalText {
+  margin: 25px 0 10px 0;
+}
+
+.modalContent .rightModal .modalFooter {
+  display: flex;
+  padding: 15px 0;
+}
+
+.modalContent .rightModal .modalFooter p {
+  margin-left: 5px;
+}
+
 /* Responsive Design */
 
 @media only screen and (max-width: 1025px) {
